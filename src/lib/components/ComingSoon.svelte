@@ -1,9 +1,17 @@
-<script>
+<script lang="ts">
     import VanillaTilt from 'vanilla-tilt';
+    import { beforeUpdate, onMount } from 'svelte';
+    
     export let font;
- 
+    let c=1;
+    beforeUpdate(() =>{
+        while(c<4){
+          c+=1;
+         setTimeout(()=>{
+        }, 5000)
+        }
+     })
  </script>
-
  <div class="flex justify-center items-center h-full w-full absolute">
      <div class=" w-full h-full flex justify-center items-center">
          <video autoplay loop muted class="h-full w-full object-cover right-0 top-0 absolute">
