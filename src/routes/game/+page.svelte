@@ -79,7 +79,6 @@
       snakeSegment.style.border = "0.3mm solid black";
       gameContainer.insertAdjacentElement("beforeend", snakeSegment);
       score += 1;
-      // document.getElementById("value").innerHTML = score;
     }
 
     for (let i = snake.length - 1; i > 0; i--) {
@@ -89,7 +88,6 @@
     //set the newHead to old positions
     snake[0] = { ...newHead };
 
-    // console.log('yoyoyoyo', newHead.x);
     //check if the snake hits the border
     let snakeSegments = document.querySelectorAll(".snake1");
     if (
@@ -217,15 +215,8 @@
       object-fit: cover;
       width: 100%;
     }
-    /* .center {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    } */
+ 
     .game-container {
-      /* display: none; */
       position: relative;
       width: 60%;
       height: calc(100vh - 20px);
@@ -331,69 +322,3 @@
       ></div>
     </div>
   </body>
-
-
-<!-- <video autoplay loop muted class="absolute h-screen object-cover w-full">
-  <source src="video.mp4" type="video/mp4" />
-</video>
-
-{#if !display}
-  <div class="absolute bg-[#777] h-[100vh] w-full sbody">
-    {#if !gameOver}
-    <div class="w-[250px] h-[250px] fixed text-center font-bold top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-gray-400 rounded-full overflow-hidden cont">
-      <div class=" spinner"></div>
-        <h1 class="text-[100px] absolute top-[50%] left-[50%] z-20 tra number">{countdown}</h1>
-      </div>
-    {:else}
-      <div class="flex justify-center items-center flex-col h-full w-full text-[50px]">
-        <h1 class="text-[clamp(65px,8vw,80px)]">Game over</h1>
-
-        {#if score > 0}
-          <div class="flex justify-center items-center flex-col h-[200px] w-[350px] bg-gray-400 name">
-            <p id="text-[30px] pname">Enter your name</p>
-            <div class="flex justify-center items-center flex-col h-[160px] w-[270px] mt-[70px] subname">
-              <form on:submit={enterData}>
-                <input class="w-[75%] h-[27px]"
-                  id="input"
-                  placeholder="name"
-                  required
-                  bind:value={namedata}
-                />
-                <button class="mt-[10px] bg-[green] border-[solid green] ml-[70px]" id="submit">submit</button>
-              </form>
-            </div>
-          </div>
-        {/if}
-
-        {#if loading}
-          <div class="h-full w-full absolute flex justify-center items-center z-20 bg-[rgba(0,0,0,0.6)] spin-box">
-            <div class="absolute border-[16px solid #f3f3f3] border-t-[16px solid #3498db] rounded-[50%] w-[120px] h-[120px] spinner2"></div>
-          </div>
-        {/if}
-      </div>
-    {/if}
-  </div>
-{/if}
-
-{#if display}
-  <div class="w-full h-screen m-0 p-0 bg-black main">
-    <div class="w-full h-full flex items-center justify-center center">
-      <div class="relative w-3/5 h-[calc(100vh-10px)] mx-auto border-[5px] border-dashed border-[rgba(255,255,255,0.5)] box-border game-container" bind:this={gameContainer} >
-        <div class="absolute bg-[rgb(17,253,63)] w-5 h-5 border-[0.3mm] border-black snake" >
-         <div class="absolute content-[''] w-[5px] h-[5px] bg-black top-[3px] left-[3px] rounded-full" ></div>
-          <div class="absolute content-[''] w-[5px] h-[5px] bg-black top-[3px] right-[3px] rounded-full" ></div> 
-        </div>
-        <div class="absolute bg-white w-5 h-5 rounded-full animate-blink egg" bind:this={egg} ></div>
-      </div>
-       <div class="absolute top-[10px] left-[30px] text-[18px] font-[segoe UI] text-white flex items-center flex-col score">        SCORE
-        <span class="block text-2xl">{score}</span>
-      </div>
-      <div
-        class="points"
-        bind:this={po}
-        style="position: absolute; color:white; left:40px; top:100px; font-size:25px"
-      ></div>
-    </div>
-  </div>
-{/if}
- -->
